@@ -6,7 +6,7 @@ class Client {
 	}
 
 	onNewMessage(message) {
-		console.log('Nova mensagem', message);
+		console.log('New message', message);
 		this.addMessage(message);
 	}
 }
