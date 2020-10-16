@@ -1,0 +1,22 @@
+/* .message:not(:last-child) {
+	margin-bottom: 0.3rem;
+}
+
+.message[data-message-type=Text] div,
+.message[data-message-type=Image] img {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.message[data-message-type=Text]:first-child div,
+.message[data-message-type=Image]:first-child img {
+	border-top-right-radius: 15px;
+}
+.message[data-message-type=Text]:last-child div,
+.message[data-message-type=Image]:last-child img {
+	border-bottom-right-radius: 15px;
+} */
+
+.message[data-message-type=Text] {
+	margin-bottom: 4px;
+}

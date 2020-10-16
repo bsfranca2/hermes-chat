@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "hermes-chat",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "preact build",
+    "serve": "sirv build --port 8080 --cors --single",
+    "dev": "preact watch",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "eslint": "^6.0.1",
+    "eslint-config-synacor": "^3.0.4",
+    "postcss-preset-env": "^6.7.0",
+    "preact-cli": "^3.0.0",
+    "preact-cli-postcss": "^1.1.1",
+    "sirv-cli": "^1.0.3"
+  },
+  "dependencies": {
+    "emoji-mart": "^3.0.0",
+    "preact": "^10.1.0",
+    "preact-render-to-string": "^5.1.2",
+    "redux-zero": "^5.1.7"
+  }
+}

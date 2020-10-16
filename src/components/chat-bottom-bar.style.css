@@ -1,0 +1,13 @@
+.bottomBarContainer {
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 0rem 1rem;
+}
+
+.bottomBarInput {
+	width: 100%;
+}
+
+.bottomSendButton {
+	margin-left: 4px;
+}

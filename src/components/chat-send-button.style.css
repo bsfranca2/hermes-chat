@@ -1,0 +1,25 @@
+.sendButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 34px;
+	width: 34px;
+
+	background-color: var(--color-primary);
+	border: none;
+	border-radius: 50%;
+	outline: 0;
+	cursor: pointer;
+}
+
+.iconContainer {
+	height: 18px;
+	width: 18px;
+}
+
+.iconContainer svg {
+	width: 100%;
+	height: auto;
+	fill: #fff;
+}

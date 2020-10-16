@@ -1,0 +1,11 @@
+.textMessage {
+	display: inline-block;
+
+	padding: 8px 12px;
+
+	font-size: var(--body-font-size);
+	color: var(--color-body);
+
+	background-color: var(--color-plain-background);
+	box-shadow: var(--shadow-soft);
+}
