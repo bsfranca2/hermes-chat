@@ -1,5 +1,5 @@
 import { connect } from 'redux-zero/preact';
-import ChatAvatar from './chat-avatar.component';
+import ChatAvatar from '../chat-avatar.component';
 import style from './chat-header.style';
 
 function ChatHeader({ header }) {

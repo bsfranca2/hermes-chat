@@ -1,5 +1,5 @@
-import ChatIcon from './chat-icon.component';
-import ChatIconButton from './chat-icon-button.component';
+import ChatIcon from '../chat-icon.component';
+import ChatIconButton from '../chat-icon-button.component';
 
 export default function ChatCamera() {
 	return (

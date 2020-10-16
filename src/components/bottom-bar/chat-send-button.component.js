@@ -1,4 +1,4 @@
-import ChatIcon from './chat-icon.component';
+import ChatIcon from '../chat-icon.component';
 import style from './chat-send-button.style';
 
 export default function ChatSenderButton() {

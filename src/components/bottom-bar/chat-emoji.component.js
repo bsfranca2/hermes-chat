@@ -1,8 +1,8 @@
 import { Component } from 'preact';
 import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
-import ChatIcon from './chat-icon.component';
-import ChatIconButton from './chat-icon-button.component';
+import ChatIcon from '../chat-icon.component';
+import ChatIconButton from '../chat-icon-button.component';
 
 function ChatEmojiContainer({ show }) {
 	if (!show) return null;
