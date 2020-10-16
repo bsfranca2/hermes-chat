@@ -7,7 +7,8 @@
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-    "lint": "eslint src"
+		"lint": "eslint src",
+		"new": "cross-env HYGEN_TMPLS=generators hygen new"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
@@ -16,9 +17,12 @@
     "build/*"
   ],
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
     "eslint": "^6.0.1",
     "eslint-config-synacor": "^3.0.4",
+    "hygen": "^6.0.4",
+    "lodash": "^4.17.20",
     "postcss-preset-env": "^6.7.0",
     "preact-cli": "^3.0.0",
     "preact-cli-postcss": "^1.1.1",
