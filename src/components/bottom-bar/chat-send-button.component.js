@@ -3,7 +3,7 @@ import style from './chat-send-button.style';
 
 export default function ChatSenderButton() {
 	return (
-		<button class={style.sendButton}>
+		<button type="submit" class={style.sendButton}>
 			<div class={style.iconContainer}>
 				<ChatIcon name={'Send'} />
 			</div>

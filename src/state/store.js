@@ -1,5 +1,5 @@
 import createStore from 'redux-zero';
-import { Message } from '../messages-data';
+import { Message } from '../models/message';
 
 // const yesterday = new Date();
 // yesterday.setDate(12);

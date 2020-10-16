@@ -1,7 +1,6 @@
 .content {
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: flex-end;
 
 	padding: 1rem;
 
