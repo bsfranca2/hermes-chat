@@ -14,7 +14,7 @@ yesterday.setDate(12);
 // 	new Message({ type: 'Audio', content: 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3' }),
 // 	new Message({ type: 'Choice' })
 // ];
-const sendBy = { name: 'BOT', avatar: 'https://randomuser.me/api/portraits/men/97.jpg' };
+const sendBy = { name: 'Sol', avatar: 'https://cdn.klink.ai/avatar_sol.svg' };
 const defaultMessage = { type: 'Text', sendBy, sendAt: new Date() };
 const initialMessages = [
 	new Message({ ...defaultMessage, content: 'Mensagem de ontem', sendAt: yesterday }),

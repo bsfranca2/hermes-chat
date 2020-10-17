@@ -34,6 +34,7 @@
     "nanoid": "^3.1.12",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2",
+    "preact-virtual-list": "^0.3.1",
     "redux-zero": "^5.1.7"
   }
 }
