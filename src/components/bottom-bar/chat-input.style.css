@@ -9,7 +9,7 @@
 }
 
 .inputContainer:focus-within {
-	background-color: var(--color-plain-object);
+	background-color: var(--color-plain-background);
 }
 
 .inputText {

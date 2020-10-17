@@ -1,24 +1,38 @@
 /**
+ * @typedef User
+ * @type {object}
+ * @property {string} name
+ * @property {string} avatar
+ */
+
+/**
  * @typedef MessageOptions
  * @type {object}
+ * @property {string} id
  * @property {('Text'|'HTML'|'Image'|'Video'|'Audio'|'Choices'|'Carousel')} type
  * @property {string} content
  * @property {MessageFile} file
  * @property {Date} sendAt
- * @property {string} whoSend
+ * @property {User} sendBy
+ * @property {('Sent'|'Pending'|'Error')} status
  */
 
 /**
  * @param {MessageOptions} params
  */
 export function Message(params) {
-	this.type = params.type; // Text | HTML | Image | Video | Audio | Choices | Carousel
+	this.id = params.id;
+	this.type = params.type;
 	this.content = params.content;
 	this.file = params.file;
 	this.sendAt = params.sendAt || new Date();
-	this.whoSend = params.whoSend;
+	this.sendBy = params.sendBy;
+	this.status = params.status;
 	this.getDate = function() {
 		return this.sendAt.getDate();
+	};
+	this.getMonth = function() {
+		return this.sendAt.getMonth() + 1;
 	};
 	this.getTimestamp = function() {
 		return this.sendAt.getTime();

@@ -10,7 +10,7 @@ export default function ChatMessage({ message }) {
 	let componentRender = null;
 
 	if (message.type === 'Text')
-		componentRender = <ChatTextMessage message={message.content} />;
+		componentRender = <ChatTextMessage message={message.content} sendBy={message.sendBy} />;
 	else if (message.type === 'HTML')
 		componentRender = <ChatHtmlMessage html={message.content} />;
 	else if (message.type === 'Image')
@@ -26,5 +26,10 @@ export default function ChatMessage({ message }) {
 	else
 		throw new Error('Message type unrecognized');
 
-	return <div class={style.message} data-message-type={message.type}>{componentRender}</div>;
+	return (
+		<div
+			class={`${style.message} ${message.sendBy.name === 'USER' ? style.sendByUser : style.sendByBot}`}
+			data-message-type={message.type}
+		>{componentRender}</div>
+	);
 }
