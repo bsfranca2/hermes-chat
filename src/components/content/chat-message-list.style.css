@@ -8,20 +8,6 @@
 	grid-area: messages;
 }
 
-.messagesGroupInfo {
-	grid-area: timestamp;
-	font-size: var(--body-font-size);
-	padding: 0 2rem;
-}
-
-.messagesGroupInfo span:first-child {
-	margin-right: 8px;
-}
-
-.messagesGroupInfo span:last-child {
-	color: var(--color-label);
-}
-
 .messagesGroup > img {
 	grid-area: avatar;
 	margin-right: 8px;

@@ -28,15 +28,6 @@ export function Message(params) {
 	this.sendAt = params.sendAt || new Date();
 	this.sendBy = params.sendBy;
 	this.status = params.status;
-	this.getDate = function() {
-		return this.sendAt.getDate();
-	};
-	this.getMonth = function() {
-		return this.sendAt.getMonth() + 1;
-	};
-	this.getTimestamp = function() {
-		return this.sendAt.getTime();
-	};
 }
 
 /**
