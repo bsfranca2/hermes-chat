@@ -1,8 +1,4 @@
 .content {
-	display: flex;
-	flex-flow: column nowrap;
-
 	padding: 1rem;
-
 	overflow-y: auto;
 }

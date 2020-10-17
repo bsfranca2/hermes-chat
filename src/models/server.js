@@ -1,4 +1,6 @@
-class Client {
+import { nanoid } from 'nanoid';
+
+export default class Server {
 	constructor(messages, addMessage, updateMessage) {
 		this.messages = messages;
 		this.addMessage = addMessage;
@@ -6,9 +8,7 @@ class Client {
 	}
 
 	onNewMessage(message) {
-		console.log('New message', message);
+		message.id = nanoid();
 		this.addMessage(message);
 	}
 }
-
-export default Client;

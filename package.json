@@ -7,8 +7,8 @@
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
-		"lint": "eslint src",
-		"new": "cross-env HYGEN_TMPLS=generators hygen new"
+    "lint": "eslint src",
+    "new": "cross-env HYGEN_TMPLS=generators hygen new"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
@@ -23,12 +23,15 @@
     "eslint-config-synacor": "^3.0.4",
     "hygen": "^6.0.4",
     "lodash": "^4.17.20",
+    "postcss-focus-within": "^4.0.0",
     "postcss-preset-env": "^6.7.0",
     "preact-cli": "^3.0.0",
     "preact-cli-postcss": "^1.1.1",
     "sirv-cli": "^1.0.3"
   },
   "dependencies": {
+    "dayjs": "^1.9.3",
+    "nanoid": "^3.1.12",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2",
     "redux-zero": "^5.1.7"

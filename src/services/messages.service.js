@@ -1,4 +1,4 @@
-import Client from '../client/index';
+import Server from '../server/index';
 
 let instance = null;
 
@@ -7,14 +7,10 @@ export default function MessageService(messages, addMessage, updateMessage) {
 		return instance;
 	}
 
-	this.messages = messages;
-	this.addMessage = addMessage;
-	this.updateMessage = updateMessage;
-
-	this.client = new Client(messages, addMessage, updateMessage);
+	this.server = new Server(messages, addMessage, updateMessage);
 
 	this.newMessage = (message) => {
-		this.client.onNewMessage(message);
+		this.server.onNewMessage(message);
 	};
 
 	return instance = this;
