@@ -9,12 +9,10 @@
 	background-color: var(--color-plain-background);
 	box-shadow: var(--shadow-soft);
 	border-radius: 16px;
-	border-bottom-left-radius: 0;
 }
 
 .sendMessage {
 	color: var(--color-primary);
 	background-color: var(--color-primary-light);
 	border-radius: 16px;
-	border-bottom-right-radius: 0;
 }

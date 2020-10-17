@@ -2,10 +2,13 @@ import createStore from 'redux-zero';
 
 const initialState = {
 	header: {
-		avatar: 'https://randomuser.me/api/portraits/men/97.jpg',
+		avatar: 'https://cdn.klink.ai/avatar_sol.svg',
 		title: 'Senff'
 	},
-	messages: []
+	messages: [],
+	user: {
+		name: 'USER'
+	}
 };
 const store = createStore(initialState);
 

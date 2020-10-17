@@ -3,7 +3,7 @@ import ChatMessage from './chat-message.component';
 import ChatAvatar from '../chat-avatar.component';
 import style from './chat-message-list.style';
 
-export default function ChatMessageList({ messages }) {
+export default function ChatMessageList({ username, messages }) {
 	const groupedMessages = [];
 	let lastDate = null;
 	for (let i = 0; i < messages.length; i++) {
@@ -31,12 +31,28 @@ export default function ChatMessageList({ messages }) {
 
 	function showAvatar(group) {
 		const message = group[0];
-		if (message.sendBy.name !== 'USER') {
+		if (message.sendBy.name !== username) {
 			return (
 				<ChatAvatar
 					url={message.sendBy.avatar}
 					size={24}
 				/>
+			);
+		}
+	}
+
+	function showNameAndAvatar(group) {
+		const message = group[group.length - 1];
+		if (message.sendBy.name !== username) {
+			return (
+				<div class={style.messagesGroupInfo}>
+					<span>
+						{message.sendBy ? message.sendBy.name : null}
+					</span>
+					<span>
+						{message.sendAt ? `${dayjs(message.sendAt).format('HH:mm')}` : null}
+					</span>
+				</div>
 			);
 		}
 	}
@@ -52,14 +68,7 @@ export default function ChatMessageList({ messages }) {
 					<div class={style.messages}>
 						{group.map(message => <ChatMessage key={message.id} message={message} />)}
 					</div>
-					<div class={style.messagesGroupInfo}>
-						<span>
-							{group[group.length - 1].sendBy ? group[group.length - 1].sendBy.name : null}
-						</span>
-						<span>
-							{group[group.length - 1].sendAt ? `${dayjs(group[group.length - 1].sendAt).format('HH:mm')}` : null}
-						</span>
-					</div>
+					{showNameAndAvatar(group)}
 				</div>
 			);
 		})}
