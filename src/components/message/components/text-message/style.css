@@ -1,0 +1,14 @@
+.textMessage {
+	display: inline-block;
+	padding: 8px 12px;
+	color: var(--clr-body);
+	background-color: var(--clr-plain-bg);
+	box-shadow: var(--soft-shadow);
+	border-radius: var(--normal-radius);
+}
+
+.sendMessage {
+	color: var(--clr-primary);
+	background-color: var(--clr-primary-light);
+	border-radius: var(--normal-radius);
+}

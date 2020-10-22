@@ -1,0 +1,39 @@
+@import 'reset.css';
+@import 'variables.css';
+
+body {
+	color: var(--clr-body);
+	background-color: var(--clr-bg);
+	overflow: hidden;
+}
+
+body, input, button {
+	font-family: var(--ff-base);
+	font-size: var(--fs-md);
+	line-height: 1.15;
+}
+
+button {
+	outline: 0;
+}
+
+h1 {
+	color: var(--clr-title-active);
+	font-size: var(--fs-xxl);
+}
+
+.d-flex {
+	display: flex;
+}
+
+.flex-inline {
+	flex-flow: row nowrap;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}

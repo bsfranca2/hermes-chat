@@ -1,0 +1,18 @@
+.sendButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 34px;
+	width: 34px;
+
+	background-color: var(--clr-primary);
+	border: none;
+	border-radius: 50%;
+	outline: 0;
+	cursor: pointer;
+}
+
+.sendButton svg {
+	fill: #fff;
+}

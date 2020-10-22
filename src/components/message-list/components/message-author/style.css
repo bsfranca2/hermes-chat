@@ -1,0 +1,12 @@
+.messagesGroupInfo {
+	grid-area: timestamp;
+	padding: 0 2rem;
+}
+
+.messagesGroupInfo span:first-child {
+	margin-right: 8px;
+}
+
+.messagesGroupInfo span:last-child {
+	color: var(--clr-label);
+}

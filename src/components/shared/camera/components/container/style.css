@@ -1,0 +1,21 @@
+.cameraContainer {
+	position: fixed;
+	top: 0; bottom: 0; left: 0; right: 0;
+
+	background-color: #000;
+	z-index: 5;
+}
+
+.backButton {
+	position: absolute;
+	top: 16px; left: 16px;
+	width: 32px; height: 32px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.25);
+	border-radius: 50%;
+	z-index: 1;
+}
