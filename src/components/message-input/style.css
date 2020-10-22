@@ -1,0 +1,33 @@
+.container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 0 2px;
+	background-color: var(--clr-input-bg);
+	border: solid 1px var(--clr-line);
+	border-radius: var(--normal-radius);
+}
+
+.container:focus-within {
+	background-color: var(--clr-plain-bg);
+}
+
+.container input[type=text] {
+	color: var(--clr-body);
+
+	height: 100%;
+	width: 100%;
+	padding: 8px 0px;
+
+	border: none;
+	outline: none;
+	background: transparent;
+}
+
+.container input[type=text]::placeholder {
+	color: var(--clr-placeholder);
+}
+
+.container svg {
+	fill: var(--clr-title-active);
+}

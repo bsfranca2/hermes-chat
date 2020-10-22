@@ -1,0 +1,9 @@
+.container {
+	padding: 4px;
+	user-select: none;
+}
+
+.iconContainer svg {
+	width: 100%;
+	height: auto;
+}

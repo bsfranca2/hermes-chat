@@ -1,0 +1,32 @@
+.messagesGroup {
+	display: grid;
+	grid-template-areas: "avatar messages" "timestamp timestamp";
+	grid-template-columns: auto 1fr;
+}
+
+.messagesGroup > div:first-child {
+	grid-area: messages;
+}
+
+.messagesGroup > img {
+	grid-area: avatar;
+	margin-right: 8px;
+	align-self: flex-end;
+}
+
+.messages {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+.messages > div:not([data-user=User]) {
+	max-width: calc(90% - (24px + 8px));
+}
+
+.date {
+	position: relative;
+	text-align: center;
+	line-height: 1;
+	margin: 1rem 0;
+}

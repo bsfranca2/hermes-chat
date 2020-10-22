@@ -1,0 +1,16 @@
+.pictureContainer {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.pictureContainer img {
+	max-width: 250px;
+	height: auto;
+	box-shadow: var(--soft-shadow);
+}
+
+@media (min-width: 480px) {
+	.pictureContainer img {
+		max-width: 320px;
+	}
+}

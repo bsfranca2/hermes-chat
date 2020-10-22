@@ -1,0 +1,46 @@
+.message {
+	margin-bottom: 4px;
+	max-width: 90%;
+}
+
+.message > div,
+.message > picture > img {
+	border-radius: 16px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.message:last-child > div,
+.message:last-child > picture > img {
+	border-radius: 16px;
+	border-top-left-radius: 0px;
+}
+
+.message:first-child > div,
+.message:first-child > picture > img {
+	border-radius: 16px;
+	border-bottom-left-radius: 0;
+}
+
+.sendByUser {
+	margin-left: auto;
+}
+
+.sendByUser > div,
+.sendByUser > picture > img {
+	border-radius: 16px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.sendByUser:last-child > div,
+.sendByUser:last-child > picture > img {
+	border-radius: 16px;
+	border-top-right-radius: 0px;
+}
+
+.sendByUser:first-child > div,
+.sendByUser:first-child > picture > img {
+	border-radius: 16px;
+	border-bottom-right-radius: 0;
+}
