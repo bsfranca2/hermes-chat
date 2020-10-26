@@ -31,7 +31,6 @@ const VideoPlayer: FunctionalComponent<Props> = ({ sources }) => {
 	}
 
 	useEffect(() => {
-		handle.node.current?.classList.add(style.fullscreen);
 		video.current.addEventListener('play', () => {
 			setIsPlaying(true);
 		});
