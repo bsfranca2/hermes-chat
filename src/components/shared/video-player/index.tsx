@@ -1,10 +1,14 @@
 import { FunctionalComponent, h } from 'preact';
 import { useRef, useState, useEffect } from 'preact/hooks';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import { Source } from '../../../models/message';
 import IconContainer from '../icon-container';
 import PlayIcon from '../icons/play';
 import PauseIcon from '../icons/pause';
 import style from './style.css';
+import FullscreenIcon from '../icons/fullscreen';
+
+const FullScreenComponent = FullScreen as any;
 
 interface Props {
 	sources: Source[];
@@ -16,6 +20,8 @@ const VideoPlayer: FunctionalComponent<Props> = ({ sources }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [progress, setProgress] = useState(0);
 
+	const handle = useFullScreenHandle();
+
 	function play(): void {
 		video.current.play();
 	}
@@ -25,6 +31,7 @@ const VideoPlayer: FunctionalComponent<Props> = ({ sources }) => {
 	}
 
 	useEffect(() => {
+		handle.node.current?.classList.add(style.fullscreen);
 		video.current.addEventListener('play', () => {
 			setIsPlaying(true);
 		});
@@ -38,29 +45,40 @@ const VideoPlayer: FunctionalComponent<Props> = ({ sources }) => {
 		});
 	}, []);
 
+	function onChangeProgress(e: h.JSX.TargetedEvent<HTMLDivElement, MouseEvent>): void {
+		const progressPercentage = e.offsetX / e.currentTarget.clientWidth;
+		const currentTime = (progressPercentage * 100) / video.current.duration;
+		video.current.currentTime = currentTime;
+	}
+
 	return (
-		<div class={style.playerContainer}>
-			<div class={style.controls}>
-				{isPlaying ? (
-					<IconContainer size={32} onClick={pause}>
-						<PauseIcon color={'white'} />
+		<FullScreenComponent handle={handle}>
+			<div class={style.playerContainer} data-media="Video">
+				<div class={style.controls}>
+					{isPlaying ? (
+						<IconContainer size={32} onClick={pause}>
+							<PauseIcon color={'white'} />
+						</IconContainer>
+					) : (
+						<IconContainer size={32} onClick={play}>
+							<PlayIcon color={'white'} />
+						</IconContainer>
+					)}
+					<div class={style.progress} onClick={onChangeProgress} data-progress>
+						<div style={`width: ${progress}%`} />
+					</div>
+					<IconContainer size={32} onClick={handle.active ? handle.exit : handle.enter}>
+						<FullscreenIcon color={'white'} />
 					</IconContainer>
-				) : (
-					<IconContainer size={32} onClick={play}>
-						<PlayIcon color={'white'} />
-					</IconContainer>
-				)}
-				<div class={style.progress}>
-					<div style={`width: ${progress}%`} />
 				</div>
+				<video ref={video} controls={false} autoPlay={false} playsInline={true}>
+					{sources.map((source) => (
+						<source key={source.type} src={source.src} type={source.type} />
+					))}
+					Your browser does not support the video tag.
+				</video>
 			</div>
-			<video ref={video} controls={false} autoPlay={false} playsInline={true}>
-				{sources.map((source) => (
-					<source key={source.type} src={source.src} type={source.type} />
-				))}
-				Your browser does not support the video tag.
-			</video>
-		</div>
+		</FullScreenComponent>
 	);
 };
 

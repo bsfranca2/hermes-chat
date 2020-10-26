@@ -1,7 +1,7 @@
 .playerContainer {
 	position: relative;
-	width: 300px;
-	height: 300px;
+	width: 280px;
+	height: 250px;
 	border: solid 2px black;
 	background-color: #000;
 }
@@ -25,9 +25,10 @@
 	position: relative;
 	align-self: center;
 	width: 200px;
-	height: 12px;
-	background-color: white;
+	height: 8px;
+	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: var(--small-radius);
+	cursor: pointer;
 }
 
 .progress > div {
@@ -35,7 +36,7 @@
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-color: blueviolet;
+	background-color: var(--clr-primary);
 	z-index: 1;
 	border-radius: var(--small-radius);
 }
