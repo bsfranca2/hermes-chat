@@ -4,7 +4,6 @@
 body {
 	color: var(--clr-body);
 	background-color: var(--clr-bg);
-	overflow: hidden;
 }
 
 body,

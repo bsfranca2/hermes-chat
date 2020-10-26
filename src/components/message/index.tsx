@@ -21,9 +21,7 @@ const MessageComponent: FunctionalComponent<Props> = ({ message }) => {
 	}
 
 	if (message.type === 'Text')
-		componentRender = (
-			<TextMessage message={message.content.text!} sendBy={message.sendBy} />
-		);
+		componentRender = <TextMessage message={message.content.text!} sendBy={message.sendBy} />;
 	// else if (message.type === 'HTML')
 	// 	componentRender = <HtmlMessage html={message.content.text!} />;
 	else if (message.type === 'Image')
@@ -38,11 +36,7 @@ const MessageComponent: FunctionalComponent<Props> = ({ message }) => {
 	else throw new Error('Message type unrecognized');
 
 	return (
-		<div
-			class={classNames}
-			data-type={message.type}
-			data-user={message.sendBy.name}
-		>
+		<div class={classNames} data-type={message.type} data-user={message.sendBy.name}>
 			{componentRender}
 		</div>
 	);

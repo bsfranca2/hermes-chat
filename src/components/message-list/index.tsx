@@ -45,10 +45,7 @@ const MessageList: FunctionalComponent<Props> = ({ username, messages }) => {
 						) : null}
 						<div class={style.messages}>
 							{item.map((message) => (
-								<MessageComponent
-									key={message.id}
-									message={message}
-								/>
+								<MessageComponent key={message.id} message={message} />
 							))}
 						</div>
 						{showAuthor(item)}

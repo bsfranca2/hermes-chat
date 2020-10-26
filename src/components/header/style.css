@@ -1,11 +1,14 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 12px 1rem;
+
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
-
-	height: 60px;
-	padding: 4px 1rem;
 
 	background-color: var(--clr-plain-bg);
 	box-shadow: var(--soft-shadow);
