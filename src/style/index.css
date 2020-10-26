@@ -4,6 +4,7 @@
 body {
 	color: var(--clr-body);
 	background-color: var(--clr-bg);
+	overscroll-behavior-y: none;
 }
 
 body,
