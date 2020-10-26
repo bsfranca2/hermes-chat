@@ -12,7 +12,7 @@
 	background-color: var(--clr-plain-bg);
 }
 
-.container input[type=text] {
+.input {
 	color: var(--clr-body);
 
 	height: 100%;
@@ -24,7 +24,7 @@
 	background: transparent;
 }
 
-.container input[type=text]::placeholder {
+.input::placeholder {
 	color: var(--clr-placeholder);
 }
 

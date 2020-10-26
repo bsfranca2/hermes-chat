@@ -52,6 +52,7 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 				<input
 					name="message"
 					type="text"
+					class={style.input}
 					value={value}
 					placeholder={'Digite sua mensagem'}
 					autoComplete="off"
