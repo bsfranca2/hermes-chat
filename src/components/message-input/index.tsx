@@ -28,12 +28,9 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 		},
 	}));
 
-	const onInput = useCallback(
-		(e: h.JSX.TargetedEvent<HTMLInputElement, Event>) => {
-			setValue(e.currentTarget?.value || '');
-		},
-		[]
-	);
+	const onInput = useCallback((e: h.JSX.TargetedEvent<HTMLInputElement, Event>) => {
+		setValue(e.currentTarget?.value || '');
+	}, []);
 
 	const onCamera = (): void => setShowCamera(true);
 	const onCameraBack = (): void => setShowCamera(false);

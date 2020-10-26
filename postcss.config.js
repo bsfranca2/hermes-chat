@@ -3,6 +3,6 @@ module.exports = {
 		require('autoprefixer'),
 		require('postcss-preset-env'),
 		require('postcss-focus-within'),
-		require('cssnano')({ preset: 'default' })
-	]
+		require('cssnano')({ preset: 'default' }),
+	],
 };
