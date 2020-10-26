@@ -1,17 +1,17 @@
 :root {
 	/** Colors */
-	--clr-primary: #5F2EEA;
-	--clr-primary-light: #DED3FF;
-	--clr-primary-dark: #2A00A2;
+	--clr-primary: #5f2eea;
+	--clr-primary-light: #ded3ff;
+	--clr-primary-dark: #2a00a2;
 
-	--clr-title-active: #14142B;
-	--clr-body: #4E4B66;
-	--clr-label: #6E7191;
-	--clr-placeholder: #A0A3BD;
-	--clr-line: #D6D8E7;
-	--clr-input-bg: #EFF0F6;
-	--clr-bg: #F7F7FC;
-	--clr-off-white: #FCFCFC;
+	--clr-title-active: #14142b;
+	--clr-body: #4e4b66;
+	--clr-label: #6e7191;
+	--clr-placeholder: #a0a3bd;
+	--clr-line: #d6d8e7;
+	--clr-input-bg: #eff0f6;
+	--clr-bg: #f7f7fc;
+	--clr-off-white: #fcfcfc;
 
 	--clr-plain-bg: #fff;
 
@@ -22,13 +22,19 @@
 	--fs-xxl: 1.3125rem;
 
 	/** Font families */
-	--ff-base: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+	--ff-base: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell,
+		Helvetica Neue;
 
 	/** General */
-	--soft-shadow: 0px 8px 16px 0px rgba(17,17,17,0.04);
-	--large-shadow: 0px 32px 64px 0px rgba(17,17,17,0.04);
+	--soft-shadow: 0px 8px 16px 0px rgba(17, 17, 17, 0.04);
+	--large-shadow: 0px 32px 64px 0px rgba(17, 17, 17, 0.04);
 
 	--small-radius: 8px;
 	--normal-radius: 16px;
 	--large-radius: 32px;
+
+	--header-layer: 5;
+	--content-layer: 1;
+	--bb-layer: 5;
+	--modal-layer: 10;
 }

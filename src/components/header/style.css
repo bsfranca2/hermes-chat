@@ -12,7 +12,7 @@
 
 	background-color: var(--clr-plain-bg);
 	box-shadow: var(--soft-shadow);
-	z-index: 1;
+	z-index: var(--header-layer);
 }
 
 .header h1 {

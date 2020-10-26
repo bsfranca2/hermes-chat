@@ -1,4 +1,5 @@
 import { FunctionalComponent, h } from 'preact';
+import { useEffect } from 'preact/hooks';
 import style from './style.css';
 import IconContainer from '../icon-container';
 import ArrowBackIcon from '../icons/arrow-back';
@@ -9,6 +10,14 @@ interface Props {
 }
 
 const Lightbox: FunctionalComponent<Props> = ({ url, onClose }) => {
+	useEffect(() => {
+		document.body.classList.add('modal');
+
+		return (): void => {
+			document.body.classList.remove('modal');
+		};
+	}, []);
+
 	if (!url) {
 		return null;
 	}

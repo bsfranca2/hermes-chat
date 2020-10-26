@@ -1,5 +1,5 @@
 import { FunctionalComponent, h } from 'preact';
-import { useCallback, useRef } from 'preact/hooks';
+import { useRef } from 'preact/hooks';
 import MessagesServiceWrapper from '../../client/wrapper';
 import { useChat } from '../../contexts/chat';
 import { useMessages } from '../../contexts/messages';

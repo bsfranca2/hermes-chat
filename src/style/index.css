@@ -49,3 +49,8 @@ h1 {
 .fullscreen-enabled [data-progress] {
 	width: calc(100vw - 84px);
 }
+
+body.modal header,
+body.modal form {
+	z-index: 0;
+}
