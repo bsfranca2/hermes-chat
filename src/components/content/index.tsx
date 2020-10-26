@@ -31,7 +31,9 @@ const Content: FunctionalComponent = () => {
 
 	return (
 		<main class={style.content}>
-			<MessageList username={me.name} messages={messages} />
+			<div style={'margin: 4rem 1rem;'}>
+				<MessageList username={me.name} messages={messages} />
+			</div>
 		</main>
 	);
 };
