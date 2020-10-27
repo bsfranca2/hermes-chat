@@ -29,6 +29,39 @@
 	color: var(--clr-placeholder);
 }
 
+.fileIcon {
+	display: flex;
+}
 .container svg {
 	fill: var(--clr-title-active);
+}
+
+.fileIconHidden {
+	animation: fileIconHidden 250ms;
+}
+
+.fileIconShow {
+	animation: fileIconShow 250ms;
+}
+
+@keyframes fileIconHidden {
+	from {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+}
+
+@keyframes fileIconShow {
+	from {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0px);
+	}
 }

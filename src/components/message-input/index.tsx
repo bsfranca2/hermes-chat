@@ -1,5 +1,5 @@
 import { FunctionalComponent, Fragment, h } from 'preact';
-import { useCallback, useImperativeHandle, useState } from 'preact/hooks';
+import { useCallback, useEffect, useImperativeHandle, useState } from 'preact/hooks';
 import { forwardRef } from 'preact/compat';
 import IconContainer from '../shared/icon-container';
 import AttachFileIcon from '../shared/icons/attach-file';
@@ -20,6 +20,33 @@ export interface MessageInputRef {
 const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 	const [value, setValue] = useState('');
 	const [showCamera, setShowCamera] = useState(false);
+
+	let fileInputClassNames = style.fileIcon;
+
+	if (value !== '') {
+		fileInputClassNames = `${fileInputClassNames} ${style.fileIconHidden}`;
+	} else {
+		fileInputClassNames = `${fileInputClassNames} ${style.fileIconShow}`;
+	}
+
+	useEffect(() => {
+		function startAnimation(e: AnimationEvent): void {
+			if (e.animationName.startsWith('fileIconShow')) {
+				(e.target as any).classList.remove('hidden');
+			}
+		}
+		function endAnimation(e: AnimationEvent): void {
+			if (e.animationName.startsWith('fileIconHidden')) {
+				(e.target as any).classList.add('hidden');
+			}
+		}
+		document.addEventListener('animationstart', startAnimation);
+		document.addEventListener('animationend', endAnimation);
+		return (): void => {
+			document.removeEventListener('animationstart', startAnimation);
+			document.removeEventListener('animationend', endAnimation);
+		};
+	}, []);
 
 	useImperativeHandle(ref, () => ({
 		value,
@@ -58,12 +85,14 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 					autoComplete="off"
 					onInput={onInput}
 				/>
-				<IconContainer size={21} onClick={onClickHandler}>
-					<AttachFileIcon />
-				</IconContainer>
-				<IconContainer size={21} onClick={onCamera}>
-					<CameraIcon />
-				</IconContainer>
+				<span class={fileInputClassNames}>
+					<IconContainer size={21} onClick={onClickHandler}>
+						<AttachFileIcon />
+					</IconContainer>
+					<IconContainer size={21} onClick={onCamera}>
+						<CameraIcon />
+					</IconContainer>
+				</span>
 			</div>
 			{showCamera && <Camera onBack={onCameraBack} onSend={onCameraSend} />}
 		</Fragment>

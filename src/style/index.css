@@ -54,3 +54,7 @@ body.modal header,
 body.modal form {
 	z-index: 0;
 }
+
+.hidden {
+	display: none !important;
+}

@@ -11,6 +11,11 @@
 	border-radius: 50%;
 	outline: 0;
 	cursor: pointer;
+	transition: background-color 250ms;
+}
+
+.sendButton:hover {
+	background-color: var(--clr-primary-dark);
 }
 
 .sendButton svg {

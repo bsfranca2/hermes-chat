@@ -2,6 +2,9 @@
 declare namespace StyleCssNamespace {
 	export interface IStyleCss {
 		container: string;
+		fileIcon: string;
+		fileIconHidden: string;
+		fileIconShow: string;
 		input: string;
 	}
 }
