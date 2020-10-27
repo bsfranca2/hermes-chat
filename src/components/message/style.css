@@ -1,6 +1,7 @@
 .message {
 	margin-bottom: 4px;
 	max-width: 90%;
+	animation: fromBottom 250ms;
 }
 
 .message > div,
@@ -43,4 +44,13 @@
 .sendByUser:first-child > picture > img {
 	border-radius: 16px;
 	border-bottom-right-radius: 0;
+}
+
+@keyframes fromBottom {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		transform: translateY(0px);
+	}
 }
