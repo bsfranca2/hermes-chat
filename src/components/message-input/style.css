@@ -6,6 +6,7 @@
 	background-color: var(--clr-input-bg);
 	border: solid 1px var(--clr-line);
 	border-radius: var(--normal-radius);
+	box-shadow: var(--soft-shadow);
 }
 
 .container:focus-within {

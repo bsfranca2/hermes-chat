@@ -13,8 +13,6 @@ const BottomBar: FunctionalComponent = () => {
 	const { messages, setMessages } = useMessages();
 	const { me } = useChat();
 
-	console.log('messages', messages);
-
 	const messageService = new MessagesServiceWrapper(messages, setMessages);
 
 	const onSubmit = (e: Event): boolean | undefined => {
