@@ -1,7 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { useState } from 'preact/hooks';
 import { useChat } from '../../contexts/chat';
-import { useMessages } from '../../contexts/messages';
 import { Message } from '../../models/message';
 import MessageList from '../message-list';
 import style from './style.css';
@@ -9,8 +8,7 @@ import style from './style.css';
 const Content: FunctionalComponent = () => {
 	const [lastMessages, setLastMessages] = useState<ReadonlyArray<Message>>([]);
 
-	const { me } = useChat();
-	const { messages } = useMessages();
+	const { me, messages } = useChat();
 
 	if (lastMessages.length === 0) {
 		setLastMessages(messages);

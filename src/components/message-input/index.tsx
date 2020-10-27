@@ -7,6 +7,7 @@ import CameraIcon from '../shared/icons/camera';
 import EmojiIcon from '../shared/icons/emoji';
 import style from './style.css';
 import Camera from '../shared/camera';
+import { useLocale } from '../../contexts/locale';
 
 interface Props {
 	onCameraSend: (image: Blob) => void;
@@ -70,6 +71,8 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 		console.log('Clicou em um icon container');
 	}
 
+	const { t } = useLocale();
+
 	return (
 		<Fragment>
 			<div class={style.container}>
@@ -81,7 +84,7 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 					type="text"
 					class={style.input}
 					value={value}
-					placeholder={'Digite sua mensagem'}
+					placeholder={t('inputPlaceholder')}
 					autoComplete="off"
 					onInput={onInput}
 				/>

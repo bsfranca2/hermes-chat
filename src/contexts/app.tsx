@@ -1,40 +1,39 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { h, createContext, FunctionalComponent } from 'preact';
 import { useContext, useState } from 'preact/hooks';
 import { ThemeOptions, FontSize } from '../models/app';
 
-export interface IAppContext {
-	locale: Readonly<string>;
-	setLocale: (locale: string) => void;
+export interface AppContextInterface {
 	theme: Readonly<string>;
-	setTheme: (theme: ThemeOptions) => void;
 	fontSize: Readonly<string>;
+	isLoading: boolean;
+	setTheme: (theme: ThemeOptions) => void;
 	setFontSize: (fontSize: FontSize) => void;
+	setIsLoading: (isLoading: boolean) => void;
 }
 
-export const AppContext = createContext<IAppContext>({
-	locale: 'pt-BR',
+export const AppContext = createContext<AppContextInterface>({
 	theme: ThemeOptions.Auto,
 	fontSize: FontSize.MD,
-	setLocale: () => {},
-	setTheme: () => {},
-	setFontSize: () => {},
+	isLoading: true,
+	setTheme: () => null,
+	setFontSize: () => null,
+	setIsLoading: () => null,
 });
 
 export const AppProvider: FunctionalComponent = ({ children }) => {
-	const [locale, setLocale] = useState<string>('pt-BR');
 	const [theme, setTheme] = useState<ThemeOptions>(ThemeOptions.Auto);
 	const [fontSize, setFontSize] = useState<FontSize>(FontSize.MD);
+	const [isLoading, setIsLoading] = useState(true);
 
 	return (
 		<AppContext.Provider
 			value={{
-				locale,
-				setLocale,
 				theme,
 				setTheme,
 				fontSize,
 				setFontSize,
+				isLoading,
+				setIsLoading,
 			}}
 		>
 			{children}
@@ -42,7 +41,7 @@ export const AppProvider: FunctionalComponent = ({ children }) => {
 	);
 };
 
-export function useApp(): IAppContext {
+export function useApp(): AppContextInterface {
 	const context = useContext(AppContext);
 	if (!context) throw new Error('useApp must be used within an AppProvider');
 	return context;

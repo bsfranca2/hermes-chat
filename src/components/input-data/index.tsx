@@ -2,16 +2,13 @@ import { FunctionalComponent, h } from 'preact';
 import { useRef } from 'preact/hooks';
 import MessagesServiceWrapper from '../../client/wrapper';
 import { useChat } from '../../contexts/chat';
-import { useMessages } from '../../contexts/messages';
 import MessageInput, { MessageInputRef } from '../message-input';
 import SendMessageButton from '../send-message-button';
 import style from './style.css';
 
 const InputData: FunctionalComponent = () => {
 	const messageInputRef = useRef<MessageInputRef>();
-
-	const { messages, setMessages } = useMessages();
-	const { me } = useChat();
+	const { me, messages, setMessages } = useChat();
 
 	const messageService = new MessagesServiceWrapper(messages, setMessages);
 

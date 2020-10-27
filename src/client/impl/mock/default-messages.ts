@@ -1,10 +1,5 @@
 import { nanoid } from 'nanoid';
-import {
-	Message,
-	MessageTypes,
-	MessageStatus,
-	MessageContent,
-} from '../models/message';
+import { Message, MessageTypes, MessageStatus, MessageContent } from '../../../models/message';
 
 const yesterday = new Date();
 yesterday.setDate(12);
@@ -41,7 +36,8 @@ const initialMessages = [
 			sources: [
 				{
 					// src: 'http://techslides.com/demos/sample-videos/small.mp4',
-					src: 'https://storage.coverr.co/videos/Y5PUw00HpQbQ00eFf66OMoMSOM4nd1ehTW?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjAzMjk4MzQ0fQ._DbrDSGI85IObve2_v-qgQYZOc_pIhW-9HzKN7O-F1I',
+					src:
+						'https://storage.coverr.co/videos/Y5PUw00HpQbQ00eFf66OMoMSOM4nd1ehTW?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjAzMjk4MzQ0fQ._DbrDSGI85IObve2_v-qgQYZOc_pIhW-9HzKN7O-F1I',
 					type: 'video/mp4',
 				},
 			],
