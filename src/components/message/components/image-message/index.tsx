@@ -28,7 +28,9 @@ const ImageMessage: FunctionalComponent<Props> = ({ sources }) => {
 				<img src={url} alt="Picture message" />
 			</picture>
 			{showLightbow && (
-				<Lightbox url={lightboxUrl} onClose={onLightboxClose} />
+				<div>
+					<Lightbox url={lightboxUrl} onClose={onLightboxClose} />
+				</div>
 			)}
 		</Fragment>
 	);

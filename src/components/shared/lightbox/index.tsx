@@ -23,21 +23,16 @@ const Lightbox: FunctionalComponent<Props> = ({ url, onClose }) => {
 	}
 
 	return (
-		<div>
-			<div class={style.lightboxContainer}>
-				<IconContainer
-					size={32}
-					customContainerClass={style.lightboxClose}
-					onClick={onClose}
-				>
-					<ArrowBackIcon color={'white'} />
-				</IconContainer>
-				<div class={style.lightbox}>
-					<picture>
-						<img src={url} alt="Lightbox image" />
-					</picture>
-				</div>
+		<div class={style.lightboxContainer}>
+			<IconContainer size={32} customContainerClass={style.lightboxClose} onClick={onClose}>
+				<ArrowBackIcon color={'white'} />
+			</IconContainer>
+			<div class={style.lightbox}>
+				<picture>
+					<img src={url} alt="Lightbox image" />
+				</picture>
 			</div>
+			<div class={style.overlay} />
 		</div>
 	);
 };

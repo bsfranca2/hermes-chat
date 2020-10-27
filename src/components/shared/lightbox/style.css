@@ -9,7 +9,6 @@
 	align-items: center;
 	justify-content: center;
 
-	background-color: var(--clr-overlay);
 	z-index: var(--modal-layer);
 }
 
@@ -33,8 +32,29 @@
 	left: 16px;
 }
 
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	background-color: var(--clr-overlay);
+	animation: fadein 150ms;
+	z-index: -1;
+}
+
 @media (min-width: 720px) {
 	.lightbox {
 		max-width: 720px;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

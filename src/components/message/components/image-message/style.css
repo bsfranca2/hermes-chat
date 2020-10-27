@@ -1,6 +1,7 @@
 .pictureContainer {
 	display: inline-block;
 	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .pictureContainer img {
