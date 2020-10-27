@@ -50,6 +50,10 @@ h1 {
 	width: calc(100vw - 84px);
 }
 
+.fullscreen-enabled > div:after {
+	border-radius: 0px !important;
+}
+
 body.modal header,
 body.modal form {
 	z-index: 0;
