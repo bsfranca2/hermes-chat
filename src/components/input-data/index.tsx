@@ -7,7 +7,7 @@ import MessageInput, { MessageInputRef } from '../message-input';
 import SendMessageButton from '../send-message-button';
 import style from './style.css';
 
-const BottomBar: FunctionalComponent = () => {
+const InputData: FunctionalComponent = () => {
 	const messageInputRef = useRef<MessageInputRef>();
 
 	const { messages, setMessages } = useMessages();
@@ -44,4 +44,4 @@ const BottomBar: FunctionalComponent = () => {
 	);
 };
 
-export default BottomBar;
+export default InputData;
