@@ -29,10 +29,19 @@ const InputData: FunctionalComponent = () => {
 		messageService.onNewImageMessage(imageMessage);
 	};
 
+	const onFileSend = (file: File): void => {
+		const fileMessage = { file, user: me };
+		messageService.onNewFileMessage(fileMessage);
+	};
+
 	return (
 		<form class={style.container} onSubmit={onSubmit}>
 			<div class={style.input}>
-				<MessageInput ref={messageInputRef} onCameraSend={onCameraSend} />
+				<MessageInput
+					ref={messageInputRef}
+					onCameraSend={onCameraSend}
+					onFileSend={onFileSend}
+				/>
 			</div>
 			<div class={style.send}>
 				<SendMessageButton />

@@ -12,13 +12,13 @@ export class Message {
 }
 
 export enum MessageTypes {
-	Text = 'Text',
+	TEXT = 'TEXT',
 	HTML = 'HTML',
-	Image = 'Image',
-	Video = 'Video',
-	Audio = 'Audio',
-	Choices = 'Choices',
-	Carousel = 'Carousel',
+	IMAGE = 'IMAGE',
+	VIDEO = 'VIDEO',
+	AUDIO = 'AUDIO',
+	OPTIONS = 'OPTIONS',
+	CAROUSEL = 'CAROUSEL',
 }
 
 export enum MessageStatus {

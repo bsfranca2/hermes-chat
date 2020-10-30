@@ -10,7 +10,7 @@ interface Props {
 
 const ImageMessage: FunctionalComponent<Props> = ({ sources }) => {
 	const url = sources[0].src;
-	const lightboxUrl = sources[1].src;
+	const lightboxUrl = sources[1] ? sources[1].src : url;
 
 	const [showLightbow, setShowLightbox] = useState(false);
 

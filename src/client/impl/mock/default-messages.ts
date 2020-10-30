@@ -21,7 +21,7 @@ interface MessageOptions {
 
 function getNewMessage({ type, sendAt, content }: MessageOptions): Message {
 	const id = nanoid();
-	type = type || MessageTypes.Text;
+	type = type || MessageTypes.TEXT;
 	sendAt = sendAt || new Date();
 	const sendBy = { name: 'Sol', avatar: 'https://cdn.klink.ai/avatar_sol.svg' };
 	const status = MessageStatus.Sent;
@@ -30,7 +30,7 @@ function getNewMessage({ type, sendAt, content }: MessageOptions): Message {
 
 const initialMessages = [
 	getNewMessage({
-		type: MessageTypes.Video,
+		type: MessageTypes.VIDEO,
 		sendAt: yesterday,
 		content: {
 			sources: [

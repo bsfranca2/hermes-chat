@@ -34,7 +34,7 @@ class MessageService implements Cycle.Hooks {
 		const { messages, setMessages } = ctx;
 		const { text, user } = data;
 		const { id, sendAt, status } = this.getDefaultNewMessage();
-		const type = MessageTypes.Text;
+		const type = MessageTypes.TEXT;
 		const message = new Message(id, type, sendAt, user, status, { text });
 		setMessages([...messages, message]);
 	}
@@ -43,7 +43,7 @@ class MessageService implements Cycle.Hooks {
 		const { messages, setMessages } = ctx;
 		const { image, user } = data;
 		const { id, sendAt, status } = this.getDefaultNewMessage();
-		const type = MessageTypes.Image;
+		const type = MessageTypes.IMAGE;
 		const content = {
 			sources: [
 				{ src: URL.createObjectURL(image), type: 'image/small' },
@@ -52,6 +52,10 @@ class MessageService implements Cycle.Hooks {
 		};
 		const message = new Message(id, type, sendAt, user, status, content);
 		setMessages([...messages, message]);
+	}
+
+	onNewFileMessage(ctx: Cycle.Context, data: Cycle.FileMessage): void {
+		//
 	}
 }
 

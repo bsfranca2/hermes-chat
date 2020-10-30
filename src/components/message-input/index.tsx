@@ -1,5 +1,5 @@
 import { FunctionalComponent, Fragment, h } from 'preact';
-import { useCallback, useEffect, useImperativeHandle, useState } from 'preact/hooks';
+import { useCallback, useEffect, useImperativeHandle, useRef, useState } from 'preact/hooks';
 import { forwardRef } from 'preact/compat';
 import IconContainer from '../shared/icon-container';
 import AttachFileIcon from '../shared/icons/attach-file';
@@ -11,6 +11,7 @@ import { useLocale } from '../../contexts/locale';
 
 interface Props {
 	onCameraSend: (image: Blob) => void;
+	onFileSend: (file: File) => void;
 }
 
 export interface MessageInputRef {
@@ -71,6 +72,13 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 		console.log('Clicou em um icon container');
 	}
 
+	const inputFile = useRef<HTMLInputElement>();
+	function onInputFile(): void {
+		if (inputFile.current.files && inputFile.current.files[0]) {
+			props.onFileSend(inputFile.current.files[0]);
+		}
+	}
+
 	const { t } = useLocale();
 
 	return (
@@ -89,9 +97,19 @@ const MessageInput: FunctionalComponent<Props> = (props, ref) => {
 					onInput={onInput}
 				/>
 				<span class={fileInputClassNames}>
-					<IconContainer size={21} onClick={onClickHandler}>
-						<AttachFileIcon />
-					</IconContainer>
+					<label htmlFor="attach-file">
+						<IconContainer size={21} customContainerClass="cursor-pointer">
+							<AttachFileIcon />
+						</IconContainer>
+					</label>
+					<input
+						ref={inputFile}
+						id="attach-file"
+						type="file"
+						accept="image/png, image/jpeg, audio/ogg, audio/mpeg, video/mp4"
+						style="display:none;"
+						onChange={onInputFile}
+					/>
 					<IconContainer size={21} onClick={onCamera}>
 						<CameraIcon />
 					</IconContainer>

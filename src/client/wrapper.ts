@@ -29,6 +29,11 @@ class MessagesServiceWrapper {
 		const ctx = this.getContext();
 		this.instance.onNewImageMessage(ctx, imageMessage);
 	}
+
+	public onNewFileMessage(fileMessage: Cycle.FileMessage): void {
+		const ctx = this.getContext();
+		this.instance.onNewFileMessage(ctx, fileMessage);
+	}
 }
 
 export default MessagesServiceWrapper;

@@ -20,13 +20,13 @@ const MessageComponent: FunctionalComponent<Props> = ({ message }) => {
 		classNames = `${classNames} ${style.sendByUser}`;
 	}
 
-	if (message.type === 'Text')
+	if (message.type === 'TEXT')
 		componentRender = <TextMessage message={message.content.text!} sendBy={message.sendBy} />;
 	// else if (message.type === 'HTML')
 	// 	componentRender = <HtmlMessage html={message.content.text!} />;
-	else if (message.type === 'Image')
+	else if (message.type === 'IMAGE')
 		componentRender = <ImageMessage sources={message.content.sources!} />;
-	else if (message.type === 'Video')
+	else if (message.type === 'VIDEO')
 		componentRender = <VideoMessage sources={message.content.sources!} />;
 	// else if (message.type === 'Audio')
 	// 	componentRender = <AudioMessage url={message.content.filename!} />;

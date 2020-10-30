@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { memo, useEffect } from 'preact/compat';
-import { getAppInfo } from '../../api/app';
+import { getChat } from '../../api/app';
 import { useApp } from '../../contexts/app';
 import { useChat } from '../../contexts/chat';
 import { useLocale } from '../../contexts/locale';
@@ -8,6 +8,9 @@ import { useLocale } from '../../contexts/locale';
 const locales = {
 	'pt-BR': {
 		inputPlaceholder: 'Digite sua mensagem',
+	},
+	'en-US': {
+		inputPlaceholder: 'Type a message',
 	},
 };
 
@@ -20,10 +23,10 @@ const Setup: FunctionalComponent = () => {
 	setLocales(locales);
 
 	useEffect(() => {
-		getAppInfo()
+		getChat()
 			.then((response) => response.json())
 			.then((json) => {
-				setTalkingWith({ name: json.title, avatar: json.avatar });
+				setTalkingWith({ name: json.title, avatar: json.avatarUrl });
 			});
 	}, []);
 
